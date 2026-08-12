@@ -21,8 +21,10 @@ This project demonstrates a basic e-commerce product listing page with client-si
 - **Product Listing**: Displays a variety of products fetched from a `products.json` file.
 - **Category Filtering**: Users can filter products by different categories using the navigation bar.
 - **Add to Cart**: Easily add products to the shopping cart with a single click.
-- **Cart Management**: View items in the cart, including quantity and price, and remove items.
+- **Cart Management**: View items in the cart, adjust quantity, and remove items.
 - **Total Calculation**: Automatically calculates and displays the total amount of items in the cart.
+- **Safe Rendering**: Product and cart values are rendered through DOM APIs rather than HTML interpolation.
+- **Validation and Error States**: Product data and saved cart entries are validated, with clear loading and error messages.
 - **Local Storage Persistence**: Cart data is saved in the browser's `localStorage`, so it persists across sessions.
 - **Responsive Design**: Adapts to different screen sizes for a seamless user experience.
 
@@ -39,14 +41,17 @@ Follow these simple steps to get the project up and running on your local machin
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/YOUR_USERNAME/simple-ecommerce-cart.git
+    git clone https://github.com/9gkc/ShopFlow.git
     ```
 2.  **Navigate to the project directory**:
     ```bash
-    cd simple-ecommerce-cart
+    cd ShopFlow
     ```
-3.  **Open `index.html` in your browser**: 
-    Simply open the `index.html` file directly from your file system using your preferred web browser. Alternatively, you can use a live server extension in your code editor (e.g., Live Server for VS Code) for a better development experience.
+3.  **Serve the project over HTTP** because the app fetches `products.json`:
+    ```bash
+    python3 -m http.server
+    # Then open http://localhost:8000
+    ```
 
     ```bash
     # Example using a simple Python HTTP server
@@ -60,7 +65,7 @@ Contributions are welcome! If you have suggestions for improvements or new featu
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. (Note: A LICENSE file will be added in the next step.)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📧 Contact
 

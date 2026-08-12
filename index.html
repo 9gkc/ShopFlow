@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Products With Cart</title>
+    <title>ShopFlow Product Catalog</title>
     <link rel="stylesheet" href="main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,20 +12,29 @@
       rel="stylesheet" />
   </head>
   <body>
-    <h1>Products With Cart</h1>
-    <div class="container">
-      <nav><ul id="navbar"></ul></nav>
+    <header>
+      <h1>ShopFlow</h1>
+      <p id="shop-status" class="shop-status" role="status" aria-live="polite">Loading the catalog…</p>
+    </header>
+    <main class="container">
+      <nav aria-label="Product categories">
+        <ul id="navbar"></ul>
+      </nav>
       <div class="data">
-        <div id="product-list" class="products"></div>
-        <div id="cart" class="cart">
-          <h2>Cart</h2>
+        <section aria-labelledby="products-heading" class="products-section">
+          <h2 id="products-heading">Products</h2>
+          <div id="product-list" class="products" aria-busy="true"></div>
+        </section>
+        <aside id="cart" class="cart" aria-labelledby="cart-heading">
+          <h2 id="cart-heading">Cart</h2>
           <ul id="cart-items" class="cart-items"></ul>
           <p class="total-amount">
-            Total: <span class="total-money">$<span id="cart-total">0.00</span></span>
+            <span>Total</span>
+            <span class="total-money" aria-live="polite"><span id="cart-total">$0.00</span></span>
           </p>
-        </div>
+        </aside>
       </div>
-    </div>
+    </main>
     <script src="main.js"></script>
   </body>
 </html>
