@@ -1,5 +1,7 @@
 # 🛒 Simple E-commerce Product Listing with Cart Functionality
 
+> **Live demo:** [Open ShopFlow in your browser](https://9gkc.github.io/ShopFlow/)
+
 <div align="center">
   <img src="https://img.shields.io/github/last-commit/9gkc/ShopFlow?style=for-the-badge&label=Last%20Update&color=58A6FF" alt="Last Update">
   <img src="https://img.shields.io/github/stars/9gkc/ShopFlow?style=for-the-badge&color=58A6FF" alt="GitHub Stars">
