@@ -2,6 +2,12 @@
 
 > **Live demo:** [Open ShopFlow in your browser](https://9gkc.github.io/ShopFlow/)
 
+## Interface preview
+
+![ShopFlow live product catalogue with category navigation, product cards, and a client-side cart](docs/images/shopflow-catalog-preview.webp)
+
+**[Open the live ShopFlow demo](https://9gkc.github.io/ShopFlow/)**. The catalogue and cart are an educational client-side demo; cart entries are stored in the browser’s local storage and do not represent live inventory, customer orders, ratings, or transactions.
+
 <div align="center">
   <img src="https://img.shields.io/github/last-commit/9gkc/ShopFlow?style=for-the-badge&label=Last%20Update&color=58A6FF" alt="Last Update">
   <img src="https://img.shields.io/github/stars/9gkc/ShopFlow?style=for-the-badge&color=58A6FF" alt="GitHub Stars">
