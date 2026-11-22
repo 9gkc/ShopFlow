@@ -20,6 +20,10 @@ function formatMoney(value) {
   return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(value);
 }
 
+function cartItemCount() {
+  return cart.reduce((sum, item) => sum + item.quantity, 0);
+}
+
 function isValidProduct(product) {
   return Boolean(
     product &&
@@ -219,7 +223,7 @@ function addToCart(id) {
   }
   if (saveCart()) {
     updateCart();
-    setStatus(`${product.title} added to your cart.`, "success");
+    setStatus(`${product.title} added · ${cartItemCount()} item(s) in cart.`, "success");
   }
 }
 
@@ -228,7 +232,10 @@ function changeQuantity(id, amount) {
   if (!item) return;
   item.quantity = Math.max(0, Math.min(maxQuantity, item.quantity + amount));
   if (item.quantity === 0) cart = cart.filter((cartItem) => cartItem.id !== id);
-  if (saveCart()) updateCart();
+  if (saveCart()) {
+    updateCart();
+    setStatus(`Cart updated · ${cartItemCount()} item(s).`, "info");
+  }
 }
 
 function removeFromCart(id) {
@@ -236,7 +243,12 @@ function removeFromCart(id) {
   cart = cart.filter((cartItem) => cartItem.id !== id);
   if (saveCart()) {
     updateCart();
-    setStatus(item ? `${item.title} removed from your cart.` : "Item removed.", "success");
+    setStatus(
+      item
+        ? `${item.title} removed · ${cartItemCount()} item(s) left.`
+        : "Item removed.",
+      "success",
+    );
   }
 }
 
@@ -254,7 +266,7 @@ async function initializeApp() {
     if (allProducts.length === 0) throw new Error("No valid products were found.");
     renderCategories(allProducts);
     renderProducts(allProducts);
-    setStatus(`${allProducts.length} products ready.`, "success");
+    setStatus(`${allProducts.length} products ready · ${cartItemCount()} in cart.`, "success");
   } catch (error) {
     console.error("Unable to load products", error);
     if (productList) {
